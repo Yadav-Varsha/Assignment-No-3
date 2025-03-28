@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Flow</title>
+    <!--Quill js-->
+    <link href="https://cdn.jsdelivr.net/npm/quill/dist/quill.snow.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=League+Spartan:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./assets/styles/styles.css">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary d-flex align-items-center fixed-top px-3">
+
+
+
+        <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+
+
+
+        <div class="d-flex justify-content-center justify-content-lg-start mx-auto">
+            <a class="navbar-brand me-2" href="#">
+                <img class="logo" src="./assets/img/tcc_logo.svg" alt="Talent Logo" height="35">
+            </a>
+            <div class="team d-none d-lg-block" style="margin-left: 175px;">
+                <h6 class="mb-0 fw-bold">Add Team Member</h6>
+                <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+                    <ol class="breadcrumb mb-0">
+                        <li class="breadcrumb-item"><a>Team Member</a></li>
+                        <li class="breadcrumb-item"><a>Team Members</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Add Team Member</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+
+
+        <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Offcanvas Navbar -->
+        <div class="offcanvas offcanvas-top" tabindex="-1" id="offcanvasNavbar">
+            <div class="offcanvas-header">
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+            </div>
+            <div class="offcanvas-body ">
+                <ul class="navbar-nav ms-auto ">
+                    <li class="nav-item dropdown mt-3">
+                        <a class="nav-link dropdown-toggle text-dark" href="#" id="languageDropdown" role="button"
+                            data-bs-toggle="dropdown">
+                            <img src="./assets/img/uk-flag.png" alt="EN(UK)" class="flag-icon" height="30" width="30"
+                                style="margin-right: 10px;">
+                            <span class="profile">EN(UK)</span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="#">EN(UK)</a></li>
+                            <li><a class="dropdown-item" href="#">FR</a></li>
+                        </ul>
+                    </li>
+                    <div class="nav-icons">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><i class="fa-regular fa-bell"></i></a>
+                        </li>
+                        <span class="mt-2 text-secondary m-1"> | </span>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><i class="fa-solid fa-gear"></i></a>
+                        </li>
+                        <span class="mt-2 text-secondary m-1"> | </span>
+                    </div>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-dark d-flex align-items-center" href="#"
+                            id="userDropdown" role="button" data-bs-toggle="dropdown">
+                            <img src="profile.jpg" alt="Profile" class="profile-pic m-1" width="30" height="30">
+                            <div class="d-flex flex-column">
+                                <span class="profile2 m-1">Megan Roberts</span>
+                                <span class="profile3"> Admin</span>
+                            </div>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="#">Profile</a></li>
+                            <li><a class="dropdown-item" href="#">Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- Sidebar (Offcanvas) -->
+    <div class="sidebar">
+
+
+        <div class="offcanvas-lg offcanvas-start bg-light vh-100 p-3 border border-0" id="sidebar">
+            <div class="accordion" id="sidebarAccordion">
+                <div class="accordion-item border border-0">
+                    <h2 class="accordion-header border border-0">
+                        <button class="accordion-button collapsed d-flex align-items-center" type="button"
+                            data-bs-toggle="collapse" data-bs-target="#collapseDashboard" aria-expanded="false"
+                            aria-controls="collapseDashboard">
+                            <img src="dashboard.svg" width="20" height="20">
+                            <span class="ms-2">Dashboard</span>
+                        </button>
+                    </h2>
+                </div>
+
+                <div class="accordion-item border border-0">
+                    <h2 class="accordion-header border border-0">
+                        <button class="accordion-button d-flex align-items-center" type="button"
+                            data-bs-toggle="collapse" data-bs-target="#collapseTeam" aria-expanded="true"
+                            aria-controls="collapseTeam">
+                            <img src="team.png" width="20" height="20">
+                            <span class="ms-2">TEAM MEMBER</span>
+                        </button>
+                    </h2>
+                    <div id="collapseTeam" class="accordion-collapse collapse show" data-bs-parent="#sidebarAccordion">
+                        <div class="accordion-body">
+                            <ul class="list-unstyled">
+                                <li class="mt-1 p-2"><img src="team.png" width="20" height="20"> Team Member</li>
+                                <li class="mt-2 p-2"><img src="certificate.svg"> Certification</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="accordion-item border border-0">
+                    <h2 class="accordion-header border border-0">
+                        <button class="accordion-button collapsed d-flex align-items-center" type="button"
+                            data-bs-toggle="collapse" data-bs-target="#collapseProject" aria-expanded="false"
+                            aria-controls="collapseProject">
+                            <img src="project.png" width="20" height="20">
+                            <span class="ms-2">PROJECT</span>
+                        </button>
+                    </h2>
+                    <div id="collapseProject" class="accordion-collapse collapse" data-bs-parent="#sidebarAccordion">
+                        <div class="accordion-body">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item border border-0">
+                    <h2 class="accordion-header border border-0">
+                        <button class="accordion-button collapsed d-flex align-items-center" type="button"
+                            data-bs-toggle="collapse" data-bs-target="#collapseClient" aria-expanded="false"
+                            aria-controls="collapseClient">
+                            <img src="client.png" width="20" height="20">
+                            <span class="ms-2">CLIENT</span>
+                        </button>
+                    </h2>
+                    <div id="collapseClient" class="accordion-collapse collapse" data-bs-parent="#sidebarAccordion">
+                        <div class="accordion-body">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item border border-0">
+                    <h2 class="accordion-header border border-0">
+                        <button class="accordion-button collapsed d-flex align-items-center" type="button"
+                            data-bs-toggle="collapse" data-bs-target="#collapseLearning" aria-expanded="false"
+                            aria-controls="collapseLearning">
+                            <img src="learning.png" width="20" height="20">
+                            <span class="ms-2">LEARNING PATH</span>
+                        </button>
+                    </h2>
+                    <div id="collapseLearning" class="accordion-collapse collapse" data-bs-parent="#sidebarAccordion">
+                        <div class="accordion-body">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--Main Content-->
+    <div class="main-content">
+        <div class="card-container ">
+            <div class="card">
+                <div class="container ">
+
+                    <div class="card-body">
+                        <div class="row align-items-center">
+                            <div class="col-md-6">
+                                <label for="searchSkills" class="form-label">Search Skills</label>
+                                <input type="text" id="searchSkills" class="form-control" placeholder="Search">
+                            </div>
+                            <div class="col-md-6 text-end">
+                                <button class="btn btn-delete">&#128465; DELETE</button>
+                                <button class="btn btn-primary">CREATE NEW SKILLS</button>
+                            </div>
+                        </div>
+
+                        <div class="row mt-4">
+                            <div class="col-md-3 d-flex justify-content-between ">
+                                <div class="skill-info">
+                                    <input type="checkbox">
+                                    <img src="https://via.placeholder.com/30" alt="Git">
+                                    <span>Git</span>
+                                </div>
+                                <div class="skill-actions">
+                                    <button class="btn btn-light">
+                                        <img src="https://img.icons8.com/ios-glyphs/20/edit.png" alt="Edit">
+                                    </button>
+                                    <button class="btn btn-light">
+                                        <img src="https://img.icons8.com/ios-glyphs/20/delete.png" alt="Delete">
+                                    </button>
+                                </div>
+
+                            </div>
+
+                            <div class="col-md-3 d-flex justify-content-between">
+                                <div class="skill-info">
+                                    <input type="checkbox">
+                                    <img src="https://via.placeholder.com/30" alt="Git">
+                                    <span>Git</span>
+                                </div>
+                                <div class="skill-actions">
+                                    <button class="btn btn-light">
+                                        <img src="https://img.icons8.com/ios-glyphs/20/edit.png" alt="Edit">
+                                    </button>
+                                    <button class="btn btn-light">
+                                        <img src="https://img.icons8.com/ios-glyphs/20/delete.png" alt="Delete">
+                                    </button>
+                                </div>
+
+                            </div>
+
+
+                            <div class="col-md-3 d-flex justify-content-between">
+                                <div class="skill-info">
+                                    <input type="checkbox">
+                                    <img src="https://via.placeholder.com/30" alt="Git">
+                                    <span>Git</span>
+                                </div>
+                                <div class="skill-actions">
+                                    <button class="btn btn-light">
+                                        <img src="https://img.icons8.com/ios-glyphs/20/edit.png" alt="Edit">
+                                    </button>
+                                    <button class="btn btn-light">
+                                        <img src="https://img.icons8.com/ios-glyphs/20/delete.png" alt="Delete">
+                                    </button>
+                                </div>
+
+                            </div>
+
+                            <div class="col-md-3 d-flex justify-content-between">
+                                <div class="skill-info">
+                                    <input type="checkbox">
+                                    <img src="https://via.placeholder.com/30" alt="Git">
+                                    <span>Git</span>
+                                </div>
+                                <div class="skill-actions">
+                                    <button class="btn btn-light">
+                                        <img src="https://img.icons8.com/ios-glyphs/20/edit.png" alt="Edit">
+                                    </button>
+                                    <button class="btn btn-light">
+                                        <img src="https://img.icons8.com/ios-glyphs/20/delete.png" alt="Delete">
+                                    </button>
+                                </div>
+
+                            </div>
+                           
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+
+
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/quill/dist/quill.min.js"></script>
+
+        <script>
+            var quill = new Quill('#editor-container', {
+                theme: 'snow',
+                placeholder: 'Start typing...',
+                modules: {
+                    toolbar: '#toolbar'
+                }
+            });
+        </script>
+
+        <script>
+            function updateImage(event) {
+                const file = event.target.files[0];
+                if (file) {
+                    const reader = new FileReader();
+                    reader.onload = function (e) {
+                        document.getElementById('profilePic').src = e.target.result;
+                    };
+                    reader.readAsDataURL(file);
+                }
+            }
+        </script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    </div>
+
+</body>
+
+</html>

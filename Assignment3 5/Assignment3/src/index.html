@@ -1,0 +1,904 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Flow</title>
+
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=League+Spartan:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./assets/styles/styles.css">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary d-flex align-items-center fixed-top px-3">
+
+
+
+        <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+
+
+
+        <div class="d-flex justify-content-center justify-content-lg-start mx-auto">
+            <a class="navbar-brand me-2" href="#">
+                <img class="logo" src="./assets/img/tcc_logo.svg" alt="Talent Logo" height="35">
+            </a>
+            <div class="team d-none d-lg-block" style="margin-left: 175px;">
+                <h6 class="mb-0 fw-bold">Skill Sets</h6>
+                <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+                    <ol class="breadcrumb mb-0">
+                        <li class="breadcrumb-item"><a>Learning Paths</a></li>
+                        <li class="breadcrumb-item"><a>Skill Sets</a></li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+
+
+        <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Offcanvas Navbar -->
+        <div class="offcanvas offcanvas-top" tabindex="-1" id="offcanvasNavbar">
+            <div class="offcanvas-header">
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+            </div>
+            <div class="offcanvas-body ">
+                <ul class="navbar-nav ms-auto ">
+                    <li class="nav-item dropdown mt-3">
+                        <a class="nav-link dropdown-toggle text-dark" href="#" id="languageDropdown" role="button"
+                            data-bs-toggle="dropdown">
+                            <img src="./assets/img/uk-flag.png" alt="EN(UK)" class="flag-icon" height="30" width="30"
+                                style="margin-right: 10px;">
+                            <span class="profile">EN(UK)</span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="#">EN(UK)</a></li>
+                            <li><a class="dropdown-item" href="#">FR</a></li>
+                        </ul>
+                    </li>
+                    <div class="nav-icons">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><i class="fa-regular fa-bell"></i></a>
+                        </li>
+                        <span class="mt-2 text-secondary m-1"> | </span>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><i class="fa-solid fa-gear"></i></a>
+                        </li>
+                        <span class="mt-2 text-secondary m-1"> | </span>
+                    </div>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-dark d-flex align-items-center" href="#"
+                            id="userDropdown" role="button" data-bs-toggle="dropdown">
+                            <img src="./assets/img/profile.jpg" alt="Profile" class="profile-pic m-1" width="30"
+                                height="30">
+                            <div class="d-flex flex-column">
+                                <span class="profile2 m-1">Megan Roberts</span>
+                                <span class="profile3"> Admin</span>
+                            </div>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="#">Profile</a></li>
+                            <li><a class="dropdown-item" href="#">Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- Sidebar (Offcanvas) -->
+    <div class="">
+
+
+        <div class="offcanvas-lg offcanvas-start bg-light vh-100p-2 border border-0" id="sidebar">
+            <div class="accordion" id="sidebarAccordion">
+                <div class="accordion-item border border-0">
+                    <h2 class="accordion-header border border-0">
+                        <button class="accordion-button collapsed d-flex align-items-center" type="button"
+                            data-bs-toggle="collapse" data-bs-target="#collapseDashboard" aria-expanded="false"
+                            aria-controls="collapseDashboard">
+                            <img src="./assets/img/dashboard.svg" width="20" height="20">
+                            <span class="ms-2">Dashboard</span>
+                        </button>
+                    </h2>
+                </div>
+
+                <div class="accordion-item border border-0">
+                    <h2 class="accordion-header border border-0">
+                        <button class="accordion-button d-flex align-items-center" type="button"
+                            data-bs-toggle="collapse" data-bs-target="#collapseTeam" aria-expanded="false"
+                            aria-controls="collapseTeam">
+                            <img src="./assets/img/team.png" width="20" height="20">
+                            <span class="ms-2">TEAM MEMBER</span>
+                        </button>
+                    </h2>
+                    <div id="collapseTeam" class="accordion-collapse collapse " data-bs-parent="#sidebarAccordion">
+                        <div class="accordion-body">
+                            <ul class="list-unstyled">
+                                <li class="mt-1 p-2"><img src="./assets/img/team.png" width="20" height="20"> Team
+                                    Member</li>
+                                <li class="mt-2 p-2"><img src="./assets/img/certificate.svg"> Certification</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="accordion-item border border-0">
+                    <h2 class="accordion-header border border-0">
+                        <button class="accordion-button collapsed d-flex align-items-center" type="button"
+                            data-bs-toggle="collapse" data-bs-target="#collapseProject" aria-expanded="false"
+                            aria-controls="collapseProject">
+                            <img src="./assets/img/project.png" width="20" height="20">
+                            <span class="ms-2">PROJECT</span>
+                        </button>
+                    </h2>
+                    <div id="collapseProject" class="accordion-collapse collapse" data-bs-parent="#sidebarAccordion">
+                        <div class="accordion-body">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item border border-0">
+                    <h2 class="accordion-header border border-0">
+                        <button class="accordion-button collapsed d-flex align-items-center" type="button"
+                            data-bs-toggle="collapse" data-bs-target="#collapseClient" aria-expanded="false"
+                            aria-controls="collapseClient">
+                            <img src="./assets/img/client.png" width="20" height="20">
+                            <span class="ms-2">CLIENT</span>
+                        </button>
+                    </h2>
+                    <div id="collapseClient" class="accordion-collapse collapse" data-bs-parent="#sidebarAccordion">
+                        <div class="accordion-body">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item border border-0">
+                    <h2 class="accordion-header border border-0">
+                        <button class="accordion-button collapsed d-flex align-items-center" type="button"
+                            data-bs-toggle="collapse" data-bs-target="#collapseLearning" aria-expanded="false"
+                            aria-controls="collapseLearning">
+                            <img src="./assets/img/learning1.png" width="20" height="20">
+                            <span class="ms-2">LEARNING PATHS</span>
+                        </button>
+                    </h2>
+                    <div id="collapseLearning" class="accordion-collapse collapse show"
+                        data-bs-parent="#sidebarAccordion">
+                        <div class="accordion-body">
+
+                            <ul class="list-unstyled">
+                                <li class="mt-1 p-2"><img src="./assets/img/learning_path.png" width="20" height="20"
+                                        style="margin-right: 8px;"> Learning Path</li>
+                                <li class="mt-2 p-2"><img src="./assets/img/courses.png"
+                                        style="margin-right: 8px;">Courses</li>
+                                <li class="mt-2 p-2"><img src="./assets/img/skill_set.png"
+                                        style="margin-right: 8px;">Skill Sets</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--Main Content-->
+    <div class="main-content">
+        <div class="card-container ">
+            <div class="card-body">
+                <div class="row align-items-center gy-2">
+                    <!-- Search Input -->
+                    <div class="col-12 col-md-6">
+                        <label for="searchSkills" class="form-label">Search Skills</label>
+                        <input type="text" id="searchSkills" class="form-control" placeholder="Search">
+                    </div>
+
+                    <!-- Buttons -->
+                    <div class="col-md-6 text-md-end text-center"> <!-- Center on small screens -->
+                        <button type="button" class="btn btn-outline-primary btn-sm"><img src="./assets/img/delete.svg"
+                                alt="Delete" height="20" width="20">Delete</button>
+                        <button class="btn btn-primary">CREATE NEW SKILLS</button>
+                    </div>
+                </div>
+
+
+
+                <!-- Skills Container -->
+                <div class="row mt-4 g-3 justify-content-start">
+
+                    <div class="col-12 col-sm-6 col-md-12 col-lg-3">
+                        <div class="d-flex align-items-center p-2 bg-light border rounded skill-box">
+                            <div class="skill-info d-flex align-items-center gap-2">
+                                <input type="checkbox">
+                                <img src="./assets/img/icon/git.png" alt="Git" width="30">
+                                <span>Git</span>
+                            </div>
+                            <div class="skill-actions ms-auto d-flex gap-2">
+                                <button class="btn btn-light p-1">
+                                    <img src="./assets/img/delete.svg" alt="Delete">
+                                </button>
+                                <button class="btn btn-light p-1">
+                                    <img src="./assets/img/Edit.svg" alt="Edit" width="20">
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-sm-6 col-md-12 col-lg-3">
+                        <div class="d-flex align-items-center p-2 bg-light border rounded skill-box">
+                            <div class="skill-info d-flex align-items-center gap-2">
+                                <input type="checkbox">
+                                <img src="./assets/img/icon/asp.net.png" alt="ASP.NET" width="30">
+                                <span>ASP.NET</span>
+                            </div>
+                            <div class="skill-actions ms-auto d-flex gap-2">
+
+                                <button class="btn btn-light p-1">
+                                    <img src="./assets/img/delete.svg" alt="Delete">
+                                </button>
+                                <button class="btn btn-light p-1">
+                                    <img src="./assets/img/Edit.svg" alt="Edit" width="20">
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-sm-6 col-md-12 col-lg-3">
+                        <div class="d-flex align-items-center p-2 bg-light border rounded skill-box">
+                            <div class="skill-info d-flex align-items-center gap-2">
+                                <input type="checkbox">
+                                <img src="./assets/img/icon/C.png" alt="C#" width="30">
+                                <span>C#</span>
+                            </div>
+                            <div class="skill-actions ms-auto d-flex gap-2">
+
+                                <button class="btn btn-light p-1">
+                                    <img src="./assets/img/delete.svg" alt="Delete">
+                                </button>
+                                <button class="btn btn-light p-1">
+                                    <img src="./assets/img/Edit.svg" alt="Edit" width="20">
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-sm-6 col-md-12 col-lg-3">
+                        <div class="d-flex align-items-center p-2 bg-light border rounded skill-box">
+                            <div class="skill-info d-flex align-items-center gap-2">
+                                <input type="checkbox">
+                                <img src="./assets/img/icon/JS.svg" alt="JavaScript" width="30">
+                                <span>JavaScript</span>
+                            </div>
+                            <div class="skill-actions ms-auto d-flex gap-2">
+                                <button class="btn btn-light p-1">
+                                    <img src="./assets/img/delete.svg" alt="Delete">
+                                </button>
+                                <button class="btn btn-light p-1">
+                                    <img src="./assets/img/Edit.svg" alt="Edit" width="20">
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!--2nd-->
+
+                <div class="row mt-4 g-3 justify-content-start">
+
+                    <div class="col-12 col-sm-6 col-md-12 col-lg-3">
+                        <div class="d-flex align-items-center p-2 bg-light border rounded skill-box">
+                            <div class="skill-info d-flex align-items-center gap-2">
+                                <input type="checkbox">
+                                <img src="./assets/img/icon/html.png" alt="html" width="30">
+                                <span>HTML</span>
+                            </div>
+                            <div class="skill-actions ms-auto d-flex gap-2">
+
+                                <button class="btn btn-light p-1">
+                                    <img src="./assets/img/delete.svg" alt="Delete">
+                                </button>
+                                <button class="btn btn-light p-1">
+                                    <img src="./assets/img/Edit.svg" alt="Edit" width="20">
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-sm-6 col-md-12 col-lg-3">
+                        <div class="d-flex align-items-center p-2 bg-light border rounded skill-box">
+                            <div class="skill-info d-flex align-items-center gap-2">
+                                <input type="checkbox">
+                                <img src="./assets/img/icon/python.png" alt="python" width="30">
+                                <span>Python</span>
+                            </div>
+                            <div class="skill-actions ms-auto d-flex gap-2">
+
+                                <button class="btn btn-light p-1">
+                                    <img src="./assets/img/delete.svg" alt="Delete">
+                                </button>
+                                <button class="btn btn-light p-1">
+                                    <img src="./assets/img/Edit.svg" alt="Edit" width="20">
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-sm-6 col-md-12 col-lg-3">
+                        <div class="d-flex align-items-center p-2 bg-light border rounded skill-box">
+                            <div class="skill-info d-flex align-items-center gap-2">
+                                <input type="checkbox">
+                                <img src="./assets/img/icon/css.png" alt="css" width="30">
+                                <span>CSS</span>
+                            </div>
+                            <div class="skill-actions ms-auto d-flex gap-2">
+
+                                <button class="btn btn-light p-1">
+                                    <img src="./assets/img/delete.svg" alt="Delete">
+                                </button>
+                                <button class="btn btn-light p-1">
+                                    <img src="./assets/img/Edit.svg" alt="Edit" width="20">
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-sm-6 col-md-12 col-lg-3">
+                        <div class="d-flex align-items-center p-2 bg-light border rounded skill-box">
+                            <div class="skill-info d-flex align-items-center gap-2">
+                                <input type="checkbox">
+                                <img src="./assets/img/icon/java.png" alt="Java" width="30">
+                                <span>Java</span>
+                            </div>
+                            <div class="skill-actions ms-auto d-flex gap-2">
+
+                                <button class="btn btn-light p-1">
+                                    <img src="./assets/img/delete.svg" alt="Delete">
+                                </button>
+                                <button class="btn btn-light p-1">
+                                    <img src="./assets/img/Edit.svg" alt="Edit" width="20">
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <!--3rd-->
+                <div class="row mt-4 g-3 justify-content-start">
+
+                    <div class="col-12 col-sm-6 col-md-12 col-lg-3">
+                        <div class="d-flex align-items-center p-2 bg-light border rounded skill-box">
+                            <div class="skill-info d-flex align-items-center gap-2">
+                                <input type="checkbox">
+                                <img src="./assets/img/icon/bootstrap.png" alt="boot" width="30">
+                                <span>Bootstrap</span>
+                            </div>
+                            <div class="skill-actions ms-auto d-flex gap-2">
+
+                                <button class="btn btn-light p-1">
+                                    <img src="./assets/img/delete.svg" alt="Delete">
+                                </button>
+                                <button class="btn btn-light p-1">
+                                    <img src="./assets/img/Edit.svg" alt="Edit" width="20">
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-sm-6 col-md-12 col-lg-3">
+                        <div class="d-flex align-items-center p-2 bg-light border rounded skill-box">
+                            <div class="skill-info d-flex align-items-center gap-2">
+                                <input type="checkbox">
+                                <img src="./assets/img/icon/react.png" alt="react" width="30">
+                                <span>React Js</span>
+                            </div>
+                            <div class="skill-actions ms-auto d-flex gap-2">
+
+                                <button class="btn btn-light p-1">
+                                    <img src="./assets/img/delete.svg" alt="Delete">
+                                </button>
+                                <button class="btn btn-light p-1">
+                                    <img src="./assets/img/Edit.svg" alt="Edit" width="20">
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-sm-6 col-md-12 col-lg-3">
+                        <div class="d-flex align-items-center p-2 bg-light border rounded skill-box">
+                            <div class="skill-info d-flex align-items-center gap-2">
+                                <input type="checkbox">
+                                <img src="./assets/img/icon/typescript.png" alt="type" width="30">
+                                <span>TypeScript</span>
+                            </div>
+                            <div class="skill-actions ms-auto d-flex gap-2">
+
+                                <button class="btn btn-light p-1">
+                                    <img src="./assets/img/delete.svg" alt="Delete">
+                                </button>
+                                <button class="btn btn-light p-1">
+                                    <img src="./assets/img/Edit.svg" alt="Edit" width="20">
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-sm-6 col-md-12 col-lg-3">
+                        <div class="d-flex align-items-center p-2 bg-light border rounded skill-box">
+                            <div class="skill-info d-flex align-items-center gap-2">
+                                <input type="checkbox">
+                                <img src="./assets/img/icon/angular.svg" alt="angular" width="30">
+                                <span>Angular</span>
+                            </div>
+                            <div class="skill-actions ms-auto d-flex gap-2">
+
+                                <button class="btn btn-light p-1">
+                                    <img src="./assets/img/delete.svg" alt="Delete">
+                                </button>
+                                <button class="btn btn-light p-1">
+                                    <img src="./assets/img/Edit.svg" alt="Edit" width="20">
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!--4th row-->
+                <div class="row mt-4 g-3 justify-content-start">
+
+                    <div class="col-12 col-sm-6 col-md-12 col-lg-3">
+                        <div class="d-flex align-items-center p-2 bg-light border rounded skill-box">
+                            <div class="skill-info d-flex align-items-center gap-2">
+                                <input type="checkbox">
+                                <img src="./assets/img/icon/node.png" alt="node" width="30">
+                                <span>Node.Js</span>
+                            </div>
+                            <div class="skill-actions ms-auto d-flex gap-2">
+
+                                <button class="btn btn-light p-1">
+                                    <img src="./assets/img/delete.svg" alt="Delete">
+                                </button>
+                                <button class="btn btn-light p-1">
+                                    <img src="./assets/img/Edit.svg" alt="Edit" width="20">
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-sm-6 col-md-12 col-lg-3">
+                        <div class="d-flex align-items-center p-2 bg-light border rounded skill-box">
+                            <div class="skill-info d-flex align-items-center gap-2">
+                                <input type="checkbox">
+                                <img src="./assets/img/icon/ml.png" alt="ML" width="30">
+                                <span>Machine Learning</span>
+                            </div>
+                            <div class="skill-actions ms-auto d-flex gap-2">
+
+                                <button class="btn btn-light p-1">
+                                    <img src="./assets/img/delete.svg" alt="Delete">
+                                </button>
+                                <button class="btn btn-light p-1">
+                                    <img src="./assets/img/Edit.svg" alt="Edit" width="20">
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-sm-6 col-md-12 col-lg-3">
+                        <div class="d-flex align-items-center p-2 bg-light border rounded skill-box">
+                            <div class="skill-info d-flex align-items-center gap-2">
+                                <input type="checkbox">
+                                <img src="./assets/img/icon/AI.png" alt="AI" width="30">
+                                <span>AI</span>
+                            </div>
+                            <div class="skill-actions ms-auto d-flex gap-2">
+
+                                <button class="btn btn-light p-1">
+                                    <img src="./assets/img/delete.svg" alt="Delete">
+                                </button>
+                                <button class="btn btn-light p-1">
+                                    <img src="./assets/img/Edit.svg" alt="Edit" width="20">
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-sm-6 col-md-12 col-lg-3">
+                        <div class="d-flex align-items-center p-2 bg-light border rounded skill-box">
+                            <div class="skill-info d-flex align-items-center gap-2">
+                                <input type="checkbox">
+                                <img src="./assets/img/icon/deep_learning.png" alt="deep" width="30">
+                                <span>Deep Learning</span>
+                            </div>
+                            <div class="skill-actions ms-auto d-flex gap-2">
+
+                                <button class="btn btn-light p-1">
+                                    <img src="./assets/img/delete.svg" alt="Delete">
+                                </button>
+                                <button class="btn btn-light p-1">
+                                    <img src="./assets/img/Edit.svg" alt="Edit" width="20">
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!--6th-->
+                <div class="row mt-4 g-3 justify-content-start">
+
+                    <div class="col-12 col-sm-6 col-md-12 col-lg-3">
+                        <div class="d-flex align-items-center p-2 bg-light border rounded skill-box">
+                            <div class="skill-info d-flex align-items-center gap-2">
+                                <input type="checkbox">
+                                <img src="./assets/img/icon/data-analyst.png" alt="data" width="30">
+                                <span>Data Analysis</span>
+                            </div>
+                            <div class="skill-actions ms-auto d-flex gap-2">
+
+                                <button class="btn btn-light p-1">
+                                    <img src="./assets/img/delete.svg" alt="Delete">
+                                </button>
+                                <button class="btn btn-light p-1">
+                                    <img src="./assets/img/Edit.svg" alt="Edit" width="20">
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-sm-6 col-md-12 col-lg-3">
+                        <div class="d-flex align-items-center p-2 bg-light border rounded skill-box">
+                            <div class="skill-info d-flex align-items-center gap-2">
+                                <input type="checkbox">
+                                <img src="./assets/img/icon/sql.png" alt="sql" width="30">
+                                <span>SQL</span>
+                            </div>
+                            <div class="skill-actions ms-auto d-flex gap-2">
+
+                                <button class="btn btn-light p-1">
+                                    <img src="./assets/img/delete.svg" alt="Delete">
+                                </button>
+                                <button class="btn btn-light p-1">
+                                    <img src="./assets/img/Edit.svg" alt="Edit" width="20">
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-sm-6 col-md-12 col-lg-3">
+                        <div class="d-flex align-items-center p-2 bg-light border rounded skill-box">
+                            <div class="skill-info d-flex align-items-center gap-2">
+                                <input type="checkbox">
+                                <img src="./assets/img/icon/mysql.png" alt="mysql" width="30">
+                                <span>MySQL</span>
+                            </div>
+                            <div class="skill-actions ms-auto d-flex gap-2">
+
+                                <button class="btn btn-light p-1">
+                                    <img src="./assets/img/delete.svg" alt="Delete">
+                                </button>
+                                <button class="btn btn-light p-1">
+                                    <img src="./assets/img/Edit.svg" alt="Edit" width="20">
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-sm-6 col-md-12 col-lg-3">
+                        <div class="d-flex align-items-center p-2 bg-light border rounded skill-box">
+                            <div class="skill-info d-flex align-items-center gap-2">
+                                <input type="checkbox">
+                                <img src="./assets/img/icon/dbm.png" alt="db" width="30">
+                                <span>Database Management</span>
+                            </div>
+                            <div class="skill-actions ms-auto d-flex gap-2">
+
+                                <button class="btn btn-light p-1">
+                                    <img src="./assets/img/delete.svg" alt="Delete">
+                                </button>
+                                <button class="btn btn-light p-1">
+                                    <img src="./assets/img/Edit.svg" alt="Edit" width="20">
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!--7th-->
+                <div class="row mt-4 g-3 justify-content-start">
+
+                    <div class="col-12 col-sm-6 col-md-12 col-lg-3">
+                        <div class="d-flex align-items-center p-2 bg-light border rounded skill-box">
+                            <div class="skill-info d-flex align-items-center gap-2">
+                                <input type="checkbox">
+                                <img src="./assets/img/icon/mDB.png" alt="mongodb" width="30">
+                                <span>MongoDB</span>
+                            </div>
+                            <div class="skill-actions ms-auto d-flex gap-2">
+
+                                <button class="btn btn-light p-1">
+                                    <img src="./assets/img/delete.svg" alt="Delete">
+                                </button>
+                                <button class="btn btn-light p-1">
+                                    <img src="./assets/img/Edit.svg" alt="Edit" width="20">
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-sm-6 col-md-12 col-lg-3">
+                        <div class="d-flex align-items-center p-2 bg-light border rounded skill-box">
+                            <div class="skill-info d-flex align-items-center gap-2">
+                                <input type="checkbox">
+                                <img src="./assets/img/icon/sql_server.png" alt="Sql" width="30">
+                                <span>SQL Server</span>
+                            </div>
+                            <div class="skill-actions ms-auto d-flex gap-2">
+
+                                <button class="btn btn-light p-1">
+                                    <img src="./assets/img/delete.svg" alt="Delete">
+                                </button>
+                                <button class="btn btn-light p-1">
+                                    <img src="./assets/img/Edit.svg" alt="Edit" width="20">
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-sm-6 col-md-12 col-lg-3">
+                        <div class="d-flex align-items-center p-2 bg-light border rounded skill-box">
+                            <div class="skill-info d-flex align-items-center gap-2">
+                                <input type="checkbox">
+                                <img src="./assets/img/icon/apache.png" alt="apache" width="30">
+                                <span>Apache</span>
+                            </div>
+                            <div class="skill-actions ms-auto d-flex gap-2">
+
+                                <button class="btn btn-light p-1">
+                                    <img src="./assets/img/delete.svg" alt="Delete">
+                                </button>
+                                <button class="btn btn-light p-1">
+                                    <img src="./assets/img/Edit.svg" alt="Edit" width="20">
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-sm-6 col-md-12 col-lg-3">
+                        <div class="d-flex align-items-center p-2 bg-light border rounded skill-box">
+                            <div class="skill-info d-flex align-items-center gap-2">
+                                <input type="checkbox">
+                                <img src="./assets/img/icon/pst_sql.png" alt="pst" width="30">
+                                <span>PostgreSQL</span>
+                            </div>
+                            <div class="skill-actions ms-auto d-flex gap-2">
+
+                                <button class="btn btn-light p-1">
+                                    <img src="./assets/img/delete.svg" alt="Delete">
+                                </button>
+                                <button class="btn btn-light p-1">
+                                    <img src="./assets/img/Edit.svg" alt="Edit" width="20">
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!--8th-->
+
+                <div class="row mt-4 g-3 justify-content-start">
+
+                    <div class="col-12 col-sm-6 col-md-12 col-lg-3">
+                        <div class="d-flex align-items-center p-2 bg-light border rounded skill-box">
+                            <div class="skill-info d-flex align-items-center gap-2">
+                                <input type="checkbox">
+                                <img src="./assets/img/icon/oracal.png" alt="Oracle" width="30">
+                                <span>Oracle SQL</span>
+                            </div>
+                            <div class="skill-actions ms-auto d-flex gap-2">
+
+                                <button class="btn btn-light p-1">
+                                    <img src="./assets/img/delete.svg" alt="Delete">
+                                </button>
+                                <button class="btn btn-light p-1">
+                                    <img src="./assets/img/Edit.svg" alt="Edit" width="20">
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-sm-6 col-md-12 col-lg-3">
+                        <div class="d-flex align-items-center p-2 bg-light border rounded skill-box">
+                            <div class="skill-info d-flex align-items-center gap-2">
+                                <input type="checkbox">
+                                <img src="./assets/img/icon/docker.png" alt="docker" width="30">
+                                <span>Docker</span>
+                            </div>
+                            <div class="skill-actions ms-auto d-flex gap-2">
+
+                                <button class="btn btn-light p-1">
+                                    <img src="./assets/img/delete.svg" alt="Delete">
+                                </button>
+                                <button class="btn btn-light p-1">
+                                    <img src="./assets/img/Edit.svg" alt="Edit" width="20">
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-sm-6 col-md-12 col-lg-3">
+                        <div class="d-flex align-items-center p-2 bg-light border rounded skill-box">
+                            <div class="skill-info d-flex align-items-center gap-2">
+                                <input type="checkbox">
+                                <img src="./assets/img/icon/kobernate.png" alt="kuber" width="30">
+                                <span>Kubernate</span>
+                            </div>
+                            <div class="skill-actions ms-auto d-flex gap-2">
+
+                                <button class="btn btn-light p-1">
+                                    <img src="./assets/img/delete.svg" alt="Delete">
+                                </button>
+                                <button class="btn btn-light p-1">
+                                    <img src="./assets/img/Edit.svg" alt="Edit" width="20">
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-sm-6 col-md-12 col-lg-3">
+                        <div class="d-flex align-items-center p-2 bg-light border rounded skill-box">
+                            <div class="skill-info d-flex align-items-center gap-2">
+                                <input type="checkbox">
+                                <img src="./assets/img/icon/jeera.png" alt="Jira" width="30">
+                                <span>Jira</span>
+                            </div>
+                            <div class="skill-actions ms-auto d-flex gap-2">
+
+                                <button class="btn btn-light p-1">
+                                    <img src="./assets/img/delete.svg" alt="Delete">
+                                </button>
+                                <button class="btn btn-light p-1">
+                                    <img src="./assets/img/Edit.svg" alt="Edit" width="20">
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!--8th-->
+
+                <div class="row mt-4 g-3 justify-content-start">
+
+                    <div class="col-12 col-sm-6 col-md-12 col-lg-3">
+                        <div class="d-flex align-items-center p-2 bg-light border rounded skill-box">
+                            <div class="skill-info d-flex align-items-center gap-2">
+                                <input type="checkbox">
+                                <img src="./assets/img/icon/api_testing.png" alt="api" width="30">
+                                <span>API Testing</span>
+                            </div>
+                            <div class="skill-actions ms-auto d-flex gap-2">
+
+                                <button class="btn btn-light p-1">
+                                    <img src="./assets/img/delete.svg" alt="Delete">
+                                </button>
+                                <button class="btn btn-light p-1">
+                                    <img src="./assets/img/Edit.svg" alt="Edit" width="20">
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-sm-6 col-md-12 col-lg-3">
+                        <div class="d-flex align-items-center p-2 bg-light border rounded skill-box">
+                            <div class="skill-info d-flex align-items-center gap-2">
+                                <input type="checkbox">
+                                <img src="./assets/img/icon/db_programing.png" alt="DBP" width="30">
+                                <span>DB Programming</span>
+                            </div>
+                            <div class="skill-actions ms-auto d-flex gap-2">
+
+                                <button class="btn btn-light p-1">
+                                    <img src="./assets/img/delete.svg" alt="Delete">
+                                </button>
+                                <button class="btn btn-light p-1">
+                                    <img src="./assets/img/Edit.svg" alt="Edit" width="20">
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-sm-6 col-md-12 col-lg-3">
+                        <div class="d-flex align-items-center p-2 bg-light border rounded skill-box">
+                            <div class="skill-info d-flex align-items-center gap-2">
+                                <input type="checkbox">
+                                <img src="./assets/img/icon/cypress.png" alt="cypress" width="30">
+                                <span>Cyprees.io</span>
+                            </div>
+                            <div class="skill-actions ms-auto d-flex gap-2">
+
+                                <button class="btn btn-light p-1">
+                                    <img src="./assets/img/delete.svg" alt="Delete">
+                                </button>
+                                <button class="btn btn-light p-1">
+                                    <img src="./assets/img/Edit.svg" alt="Edit" width="20">
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-sm-6 col-md-12 col-lg-3">
+                        <div class="d-flex align-items-center p-2 bg-light border rounded skill-box">
+                            <div class="skill-info d-flex align-items-center gap-2">
+                                <input type="checkbox">
+                                <img src="./assets/img/icon/auto.png" alt="Automa" width="30">
+                                <span>Automation Testing</span>
+                            </div>
+                            <div class="skill-actions ms-auto d-flex gap-2">
+
+                                <button class="btn btn-light p-1">
+                                    <img src="./assets/img/delete.svg" alt="Delete">
+                                </button>
+                                <button class="btn btn-light p-1">
+                                    <img src="./assets/img/Edit.svg" alt="Edit" width="20">
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+            </div>
+
+
+
+
+            <!-- Pagination -->
+            <nav class="d-flex justify-content-end mt-1">
+                <ul class="pagination">
+                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item"><a class="page-link" href="#">4</a></li>
+                    <li class="page-item"><span class="dots">...</span></li>
+                    <li class="page-item"><a class="page-link" href="#">90</a></li>
+                    <li class="page-item"><a class="page-link" href="#">❯</a></li>
+                    <li class="page-item"><a class="page-link" href="#">❯❯</a></li>
+                </ul>
+            </nav>
+        </div>
+
+
+
+
+    </div>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    </div>
+
+</body>
+
+</html>

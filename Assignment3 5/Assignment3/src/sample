@@ -1,0 +1,172 @@
+ <div class="row mt-4">
+                            <div class="col-md-3 d-flex align-items-center bg-light border ">
+                                <div class="skill-info">
+                                    <input type="checkbox">
+                                    <img src="asset/git.svg" alt="Git">
+                                    <span>Git</span>
+                                </div>
+                                <div class="skill-actions">
+                                    <button class="btn btn-light">
+                                        <img src="asset/Edit.svg" alt="Edit">
+                                    </button>
+                                    <button class="btn btn-light">
+                                        <img src="asset/https://img.icons8.com/ios-glyphs/20/delete.png" alt="Delete">
+                                    </button>
+                                </div>
+
+                                <br>
+
+                            </div>
+
+                            <div class="col-md-3 d-flex justify-content-between bg-light">
+                                <div class="skill-info">
+                                    <input type="checkbox">
+                                    <img src="asset/asp.net.png" alt="asp.net">
+                                    <span>Git</span>
+                                </div>
+                                <div class="skill-actions">
+                                    <button class="btn btn-light">
+                                        <img src="asset/edit.svg" alt="Edit">
+                                    </button>
+                                    <button class="btn btn-light">
+                                        <img src="asset/https://img.icons8.com/ios-glyphs/20/delete.png" alt="Delete">
+                                    </button>
+                                </div>
+
+                            </div>
+
+
+                            <div class="col-md-3 d-flex justify-content-between bg-light border">
+                                <div class="skill-info">
+                                    <input type="checkbox">
+                                    <img src="asset/https://via.placeholder.com/30" alt="Git">
+                                    <span>Git</span>
+                                </div>
+                                <div class="skill-actions">
+                                    <button class="btn btn-light">
+                                        <img src="asset/https://img.icons8.com/ios-glyphs/20/edit.png" alt="Edit">
+                                    </button>
+                                    <button class="btn btn-light">
+                                        <img src="asset/https://img.icons8.com/ios-glyphs/20/delete.png" alt="Delete">
+                                    </button>
+                                </div>
+
+                            </div>
+
+                            <div class="col-md-3 d-flex justify-content-between bg-light">
+                                <div class="skill-info">
+                                    <input type="checkbox">
+                                    <img src="asset/https://via.placeholder.com/30" alt="Git">
+                                    <span>Git</span>
+                                </div>
+                                <div class="skill-actions">
+                                    <button class="btn btn-light">
+                                        <img src="asset/https://img.icons8.com/ios-glyphs/20/edit.png" alt="Edit">
+                                    </button>
+                                    <button class="btn btn-light">
+                                        <img src="asset/https://img.icons8.com/ios-glyphs/20/delete.png" alt="Delete">
+                                    </button>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+
+
+
+
+                        
+                    <div class="card-body">
+                        <div class="row align-items-center">
+                            <div class="col-md-6">
+                                <label for="searchSkills" class="form-label">Search Skills</label>
+                                <input type="text" id="searchSkills" class="form-control" placeholder="Search">
+                            </div>
+                            <div class="col-md-6 text-end">
+                                <button class="btn btn-delete">&#128465; DELETE</button>
+                                <button class="btn btn-primary">CREATE NEW SKILLS</button>
+                            </div>
+                        </div>
+
+                        <div class="row mt-4 g-3"> <!-- Add Bootstrap gap for spacing -->
+
+                            <div class="col-sm-6 col-md-3">
+                                <div
+                                    class="d-flex align-items-center justify-content-between p-2 bg-light border rounded">
+                                    <div class="skill-info d-flex align-items-center gap-2">
+                                        <input type="checkbox">
+                                        <img src="asset/git.svg" alt="Git" width="30">
+                                        <span>Git</span>
+                                    </div>
+                                    <div class="skill-actions d-flex gap-2">
+                                        <button class="btn btn-light p-1">
+                                            <img src="asset/edit.svg" alt="Edit" width="20">
+                                        </button>
+                                        <button class="btn btn-light p-1">
+                                            <img src="asset/delete.svg" alt="Delete">
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-6 col-md-3">
+                                <div
+                                    class="d-flex align-items-center justify-content-between p-2 bg-light border rounded">
+                                    <div class="skill-info d-flex align-items-center gap-2">
+                                        <input type="checkbox">
+                                        <img src="asset/asp.net.png" alt="ASP.NET" width="30">
+                                        <span>ASP.NET</span>
+                                    </div>
+                                    <div class="skill-actions d-flex gap-2">
+                                        <button class="btn btn-light p-1">
+                                            <img src="asset/edit.svg" alt="Edit" width="20">
+                                        </button>
+                                        <button class="btn btn-light p-1">
+                                            <img src="asset/delete.svg" alt="Delete">
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-6 col-md-3">
+                                <div
+                                    class="d-flex align-items-center justify-content-between p-2 bg-light border rounded">
+                                    <div class="skill-info d-flex align-items-center gap-2">
+                                        <input type="checkbox">
+                                        <img src="asset/C.png" alt="C#">
+                                        <span>C#</span>
+                                    </div>
+                                    <div class="skill-actions d-flex gap-2">
+                                        <button class="btn btn-light p-1">
+                                            <img src="asset/Edit.svg" alt="Edit">
+                                        </button>
+                                        <button class="btn btn-light p-1">
+                                            <img src="asset/delete.svg" alt="Delete">
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-6 col-md-3">
+                                <div
+                                    class="d-flex align-items-center justify-content-between p-2 bg-light border rounded">
+                                    <div class="skill-info d-flex align-items-center gap-2">
+                                        <input type="checkbox">
+                                        <img src="asset/JS.svg" alt="JS">
+                                        <span>JavaScript</span>
+                                    </div>
+                                    <div class="skill-actions d-flex gap-2">
+                                        <button class="btn btn-light p-1">
+                                            <img src="asset/Edit.svg" alt="Edit">
+                                        </button>
+                                        <button class="btn btn-light p-1">
+                                            <img src="asset/delete.svg" alt="Delete">
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
